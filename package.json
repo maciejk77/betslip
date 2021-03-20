@@ -6,16 +6,18 @@
   "scripts": {
     "preinstall": "cd frontend && npm install",
     "start-server": "node ./api/server.js",
-    "start-frontend": "cd frontend && react-scripts start"
+    "start-frontend": "cd frontend && react-scripts start",
+    "start": "npm run start-server & npm run start-frontend"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.cloud.oddschecker.com:ollie.ayre/react-betslip-code-test.git"
+    "url": "git@github.com:maciejk77/betslip.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.4",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "react-scripts": "^4.0.3"
   }
 }
