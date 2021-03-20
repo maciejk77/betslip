@@ -8,9 +8,9 @@ let decimalOddsMoreThanTwoData = [];
 
 for (const bet of bets) {
   if (bet.odds.some((line) => line.oddsDecimal < 2)) {
-    decimalOddsLessThanTwoData.push(bet);
+    decimalOddsLessThanTwoData = [...decimalOddsLessThanTwoData, bet];
   } else {
-    decimalOddsMoreThanTwoData.push(bet);
+    decimalOddsMoreThanTwoData = [...decimalOddsMoreThanTwoData, bet];
   }
 }
 
