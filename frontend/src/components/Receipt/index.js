@@ -1,17 +1,15 @@
 import React from 'react';
+import useStyles from './styles';
 
-const Receipt = ({ stake }) => (
-  <div style={styles.component}>
-    <div>Receipt</div>
-    <div>Your bet has been placed</div>
-    <div>Total Stake: {stake}</div>
-  </div>
-);
-
-const styles = {
-  component: {
-    border: '1px solid black',
-    padding: '20px 10px',
-  },
+const Receipt = ({ stake }) => {
+  const { component } = useStyles();
+  return (
+    <div className={component}>
+      <div>Receipt</div>
+      <div>Your bet has been placed</div>
+      <div>Total Stake: {stake}</div>
+    </div>
+  );
 };
+
 export default Receipt;
