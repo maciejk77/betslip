@@ -13,7 +13,7 @@ export default createUseStyles(
       justifyContent: 'space-around',
     },
     button: {
-      textAlign: 'end',
+      textAlign: 'center',
     },
   }),
   { name: 'betslip' }

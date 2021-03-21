@@ -7,7 +7,12 @@ import useStyles from './styles';
 
 const BetSlip = () => {
   const { component, top, button } = useStyles();
-  return (
+  const { oddsUnder, oddsOver } = useContext(OddsContext);
+
+  const isFetching = !(oddsUnder.length && oddsOver.length);
+  const Loader = <p>Loading...</p>;
+
+  const renderComponent = (
     <div className={component}>
       <div className={top}>
         <h1>Betslip</h1>
@@ -15,9 +20,13 @@ const BetSlip = () => {
       </div>
 
       <BetLines />
-      <div className={button}></div>
+      <div className={button}>
+        <Button>Bet Now</Button>
+      </div>
     </div>
   );
+
+  return isFetching ? Loader : renderComponent;
 };
 
 export default BetSlip;

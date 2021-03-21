@@ -1,16 +1,16 @@
 import React, { useContext, useEffect } from 'react';
-import BetSlip from '../src/components/BetSlip';
 import { BASE_URL, OVER, UNDER } from '../src/constants';
 import { ThemeProvider } from 'react-jss';
 import { theme } from './theme';
 import { OddsContext } from './odds';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import BetSlip from '../src/components/BetSlip';
+import Receipt from './components/Receipt';
+
+// TODO: fix Router redirect to /receipt
 
 const App = () => {
-  const { oddsOver, oddsUnder, setOddsOver, setOddsUnder } = useContext(
-    OddsContext
-  );
-
-  const isFetching = !(oddsUnder.length && oddsOver.length);
+  const { setOddsOver, setOddsUnder } = useContext(OddsContext);
 
   useEffect(() => {
     fetchDataFor(UNDER);
@@ -27,7 +27,12 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      {isFetching ? <p>LOADING...</p> : <BetSlip />}
+      <Router>
+        <Switch>
+          <Route path="/" component={BetSlip} exact />
+          <Route path="/receipt" component={Receipt} exact />
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 };
