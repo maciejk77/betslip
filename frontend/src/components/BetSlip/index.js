@@ -1,5 +1,6 @@
-import React from 'react';
-import BetLine from '../BetLine';
+import React, { useContext } from 'react';
+import { OddsContext } from '../../odds';
+import BetLines from '../BetLines';
 import Button from '../Button';
 import Filter from '../Filter';
 import useStyles from './styles';
@@ -12,11 +13,9 @@ const BetSlip = () => {
         <h1>Betslip</h1>
         <Filter />
       </div>
-      <BetLine />
-      <BetLine />
-      <div className={button}>
-        <Button>Bet Now</Button>
-      </div>
+
+      <BetLines />
+      <div className={button}></div>
     </div>
   );
 };

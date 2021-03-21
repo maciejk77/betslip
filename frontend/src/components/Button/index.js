@@ -1,9 +1,13 @@
 import React from 'react';
 import useStyles from './styles';
 
-const Button = ({ children }) => {
+const Button = ({ children, onClick }) => {
   const { component } = useStyles();
-  return <button className={component}>{children}</button>;
+  return (
+    <div className={component} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 
 export default Button;
