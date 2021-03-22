@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { OddsContext } from '../../odds';
-import BetLines from '../BetLines';
-import Button from '../Button';
+import BetForm from '../BetForm';
 import Filter from '../Filter';
+import Loader from '../Loader';
 import useStyles from './styles';
 
 const BetSlip = () => {
-  const { component, top, button } = useStyles();
   const { oddsUnder, oddsOver } = useContext(OddsContext);
+  const { component, top } = useStyles();
 
   const isFetching = !(oddsUnder.length && oddsOver.length);
-  const Loader = <p>Loading...</p>;
 
   const renderComponent = (
     <div className={component}>
@@ -19,10 +18,7 @@ const BetSlip = () => {
         <Filter />
       </div>
 
-      <BetLines />
-      <div className={button}>
-        <Button>Bet Now</Button>
-      </div>
+      <BetForm />
     </div>
   );
 

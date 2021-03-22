@@ -7,8 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BetSlip from '../src/components/BetSlip';
 import Receipt from './components/Receipt';
 
-// TODO: fix Router redirect to /receipt
-
 const App = () => {
   const { setOddsOver, setOddsUnder } = useContext(OddsContext);
 

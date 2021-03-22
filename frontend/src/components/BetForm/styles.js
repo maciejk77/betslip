@@ -12,5 +12,5 @@ export default createUseStyles(
       padding: '20px 10px',
     },
   }),
-  { name: 'betlines' }
+  { name: 'betform' }
 );

@@ -1,12 +1,12 @@
 import React from 'react';
 import useStyles from './styles';
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, type }) => {
   const { component } = useStyles();
   return (
-    <div className={component} onClick={onClick}>
+    <button className={component} onClick={onClick} type={type}>
       {children}
-    </div>
+    </button>
   );
 };
 

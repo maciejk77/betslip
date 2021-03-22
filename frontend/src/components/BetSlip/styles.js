@@ -12,9 +12,6 @@ export default createUseStyles(
       alignItems: 'center',
       justifyContent: 'space-around',
     },
-    button: {
-      textAlign: 'center',
-    },
   }),
   { name: 'betslip' }
 );
