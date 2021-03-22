@@ -15,7 +15,8 @@ const BetForm = () => {
   const odds = oddsType === 'under' ? oddsUnder : oddsOver;
 
   // TODO: fix totalStakes to be value * maxOdds(odds)
-  // console.log(stakes);
+  // TODO: add validation only numbers, and no empty fields, 2 digits?
+  console.log(stakes);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +36,7 @@ const BetForm = () => {
       </div>
       <Input
         name={`stake${idx}`}
-        value={stakes[`stake${idx}`]}
+        value={stakes[`stake${idx}`] || ''}
         onChange={handleChange}
       />
     </div>

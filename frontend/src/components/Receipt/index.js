@@ -6,10 +6,13 @@ import { useHistory } from 'react-router-dom';
 // TODO: Total Stake value - to be odds * stake sum of
 
 const Receipt = () => {
-  const { stakes } = useContext(OddsContext);
+  const { stakes, setStakes } = useContext(OddsContext);
   const { component } = useStyles();
   const history = useHistory();
-  const handleClick = () => history.push('/');
+  const handleClick = () => {
+    history.push('/');
+    setStakes([]);
+  };
 
   const sumOfStakes = totalStake(Object.values(stakes));
 
